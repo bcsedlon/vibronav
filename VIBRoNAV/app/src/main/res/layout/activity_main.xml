@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="{relativePackage}.${activityClass}" >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="RX:"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:textColor="#000"
+                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:layout_weight="0.8"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="&lt;Read Buffer>"
+                android:id="@+id/readBuffer"
+                android:layout_centerHorizontal="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="STATUS:"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:ellipsize="end"
+                android:maxLines="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+
+                android:text="&lt;Bluetooth Status>"
+                android:id="@+id/bluetoothStatus"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:layout_centerHorizontal="true"
+                android:layout_alignTop="@+id/checkboxLED1" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth ON"
+            android:id="@+id/scan"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/off" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth OFF"
+            android:id="@+id/off"
+            android:layout_alignBottom="@+id/scan"
+            android:layout_toEndOf="@+id/PairedBtn"
+            android:layout_toRightOf="@+id/PairedBtn" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show paired Devices"
+            android:id="@+id/PairedBtn"
+            android:layout_below="@+id/scan"
+            android:layout_toStartOf="@+id/discover" />
+
+        <!--
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Discover New Devices"
+            android:id="@+id/discover"
+            android:layout_below="@+id/off"
+            android:layout_toRightOf="@+id/checkboxLED1"
+            android:layout_toEndOf="@+id/checkboxLED1" />
+-->
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/devicesListView"
+            android:choiceMode="singleChoice"
+            android:layout_below="@+id/PairedBtn"
+            android:layout_alignRight="@+id/off"
+            android:layout_alignEnd="@+id/off" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TEST VIBRATION"
+            android:id="@+id/test1"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TEST BLUETOOTH DEVICE"
+            android:id="@+id/send"
+/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STOP SERVICES AND EXIT!"
+            android:id="@+id/cancel"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOTIFICATIONS:"
+            android:id="@+id/notifications"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_centerHorizontal="true"
+  />
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+        </ListView>
+
+    </LinearLayout>
+</RelativeLayout>
